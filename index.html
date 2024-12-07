@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     
 </body>
 </html>
+
+<script>
+    let main = document.createElement("main");
+    document.body.appendChild(main);
+    main.classList.add('gridSurface');
+
+    function gridGenerate() {
+        for (let i = 0; i <= 255; i++) {
+            let box = document.createElement("div");
+            box.classList.add('box')
+            main.appendChild(box);
+        }
+    }
+
+    gridGenerate();
+
+</script>
