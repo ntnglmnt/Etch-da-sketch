@@ -21,6 +21,9 @@
             let box = document.createElement("div");
             box.classList.add('box')
             main.appendChild(box);
+            box.addEventListener("mouseover", function() {
+                box.style.backgroundColor = "black";
+            })
         }
     }
 
