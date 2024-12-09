@@ -12,18 +12,24 @@
 </html>
 
 <script>
-    let main = document.createElement("main");
+    let main = document.createElement("table");
     document.body.appendChild(main);
-    main.classList.add('gridSurface');
+    
 
     function gridGenerate() {
-        for (let i = 0; i <= 255; i++) {
-            let box = document.createElement("div");
-            box.classList.add('box')
-            main.appendChild(box);
-            box.addEventListener("mouseover", function() {
-                box.style.backgroundColor = "black";
-            })
+        for (let i = 0; i <= 16; i++) {
+            let myRow = document.createElement("tr");
+            myRow.classList.add("myrow");
+            main.appendChild(myRow);
+
+            for (let j = 0; j <= 16; j++) {
+                let myCell = document.createElement("td");
+                myRow.appendChild(myCell);
+                myCell.classList.add("cell")
+                myCell.addEventListener("mouseover", function () {
+                    myCell.style.backgroundColor = 'black';
+                })
+            }
         }
     }
 
