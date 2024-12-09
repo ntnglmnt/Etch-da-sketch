@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 
 <script>
-    let main = document.createElement("table");
+    let main = document.createElement("div");
     document.body.appendChild(main);
-    
 
-    function gridGenerate() {
-        for (let i = 0; i <= 16; i++) {
-            let myRow = document.createElement("tr");
-            myRow.classList.add("myrow");
-            main.appendChild(myRow);
+    let table = document.createElement("table");
+    main.appendChild(table);
 
-            for (let j = 0; j <= 16; j++) {
-                let myCell = document.createElement("td");
-                myRow.appendChild(myCell);
-                myCell.classList.add("cell")
-                myCell.addEventListener("mouseover", function () {
-                    myCell.style.backgroundColor = 'black';
-                })
+    let gridSelection = document.createElement("button");
+    main.appendChild(gridSelection);
+    gridSelection.textContent = 'Start'
+    gridSelection.classList.add("setGridBtn")
+    gridSelection.addEventListener("click", (d) => {
+        let userValue = prompt('Specify dimensions');
+
+            let dimension = userValue;
+            console.log(dimension)
+
+            for (let i = 0; i <= dimension; i++) {
+
+                let myRow = document.createElement("tr");
+                myRow.classList.add("myrow");
+                table.appendChild(myRow);
+
+                for (let j = 0; j <= dimension; j++) {
+                    let myCell = document.createElement("td");
+                    myRow.appendChild(myCell);
+                    myCell.classList.add("cell")
+                    myCell.addEventListener("mouseover", function () {
+                        myCell.style.backgroundColor = 'black';
+                    })
+                }
             }
-        }
-    }
 
-    gridGenerate();
-
+    })
 </script>

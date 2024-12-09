@@ -5,6 +5,11 @@ body {
     
 }
 
+main {
+    display: flex;
+    background-color: lightslategray;
+}
+
 table {
     background-color: aliceblue;
     display: flexbox;
@@ -12,6 +17,7 @@ table {
     padding: 0;
     gap: 0;
     border: solid 4px plum;
+    height: myrow.length;
 }
 
 .myrow {
@@ -28,4 +34,10 @@ table {
     padding: 0;
     gap: 0;
     border: 0;
+}
+
+.setGridBtn {
+    width: 64px;
+    height: 48px;
+
 }
