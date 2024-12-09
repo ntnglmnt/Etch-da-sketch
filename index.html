@@ -21,6 +21,14 @@
     let table = document.createElement("table");
     main.appendChild(table);
 
+    let eraser = document.createElement("button");
+    main.appendChild(eraser);
+    eraser.classList.add("eraser");
+    eraser.textContent = 'Erase';
+    eraser.addEventListener('click', () => {
+        location.reload()
+    })
+
     let gridSelection = document.createElement("button");
     main.appendChild(gridSelection);
     gridSelection.textContent = 'Start'
@@ -41,7 +49,7 @@
                     let myCell = document.createElement("td");
                     myRow.appendChild(myCell);
                     myCell.classList.add("cell")
-                    myCell.addEventListener("mouseover", function () {
+                    myCell.addEventListener("mousedown", function () {
                         myCell.style.backgroundColor = 'black';
                     })
                 }
