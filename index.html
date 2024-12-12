@@ -34,12 +34,11 @@
     gridSelection.textContent = 'Start'
     gridSelection.classList.add("setGridBtn")
     gridSelection.addEventListener("click", (d) => {
-        let userValue = prompt('Specify dimensions');
+        let dimension = prompt('Specify dimensions');
 
-            let dimension = userValue;
-            console.log(dimension)
+        if (dimension <= 100) {
 
-            for (let i = 0; i <= dimension; i++) {
+            for (let i = 0; i <= dimension-1; i++) {
 
                 let myRow = document.createElement("tr");
                 myRow.classList.add("myrow");
@@ -47,12 +46,17 @@
 
                 for (let j = 0; j <= dimension; j++) {
                     let myCell = document.createElement("td");
+                    let cellSize = 680/dimension + "px";
+                    myCell.style.width = cellSize;
+                    myCell.style.height = cellSize;
                     myRow.appendChild(myCell);
-                    myCell.classList.add("cell")
+                    myCell.classList.add("cell");
                     myCell.addEventListener("mouseover", function () {
                         myCell.style.backgroundColor = 'black';
                     })
                 }
             }
+        }
+        else alert('You have exceeded the size capacity')
     })
 </script>
